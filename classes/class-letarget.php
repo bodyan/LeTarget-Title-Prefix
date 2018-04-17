@@ -38,6 +38,9 @@ class LeTargetTitlePrefix
         
     public function letarget_main_page() 
     {
+        if(!current_user_can('manage_options')) {
+			wp_die( 'Access denied. Please check your permissions' );
+		}
         ?>
         <div class="wrap">
             <h1>LeTarget Custom Title Prefix</h1>
